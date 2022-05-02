@@ -7,23 +7,26 @@ A credit method adding the value passed as an argument to the account balance.
 A describe method returning the account description.
 Write a program that creates three accounts: one belonging to Sean, another to Brad and the third one to Georges. These accounts are stored in an array. Next, the program credits 1000 to each account and shows its description. */
 
-class Account{
-    constructor(name){
-      this.name = name
-      this.balance = 0
-    }
-    credit(amount){
-      this.balance += amount
-    }
-    describe(){
-      return `owner: ${this.name}, balance ${this.balance}`
-    }
+class Account {
+  constructor(name) {
+    this.name = name;
+    this.balance = 0;
   }
-  
-  
-  const accountList = [new Account('Sean'), new Account('Brad'), new Account('Georges')]
-  
-  accountList.forEach(x => {
-    x.credit(+(1000))
-    console.log(x.describe())
-  })
+  credit(amount) {
+    this.balance += amount;
+  }
+  describe() {
+    return `owner: ${this.name}, balance ${this.balance}`;
+  }
+}
+
+const accountList = [
+  new Account("Sean"),
+  new Account("Brad"),
+  new Account("Georges"),
+];
+
+accountList.forEach((x) => {
+  x.credit(+1000);
+  console.log(x.describe());
+});
